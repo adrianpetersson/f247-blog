@@ -1,18 +1,17 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import * as React from "react"
+import SectionLayout from "../styles/SectionLayout"
 
-import SEO from '../components/SEO'
-import { Container } from '../styles/PageLayout'
-import { Headline } from '../styles/Typography'
 
-const NotFoundPage = () => (
-  <>
-    <SEO title="Not Found" />
-    <Container column>
-      <Headline>Oops, where did this page come from?</Headline>
-      <Link to="/">← go back home</Link>
-    </Container>
-  </>
-)
+const NotFoundPage = () => {
+
+  return (
+    <SectionLayout>
+      <Seo title="404: Not Found" />
+      <h1>404: Not Found</h1>
+      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    </SectionLayout>
+  )
+}
 
 export default NotFoundPage
+

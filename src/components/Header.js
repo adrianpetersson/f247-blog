@@ -1,17 +1,32 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { RiEyeFill, RiEyeCloseFill } from 'react-icons/ri'
+import Headings from "./Headings"
+import bannerImg from "../assets/images/banner.jpg"
+import bannerSm from "../assets/images/banner-sm.png"
+import Logo from "./Logo"
+import styled from "styled-components"
+import data from "../data/content"
+import {Layout, SectionWrapper} from "../styles/SectionLayout"
 
-import HeaderLayout from '../styles/HeaderLayout'
-import { ButtonGhost } from '../styles/ButtonLayout'
 
-const Header = ({ mode, toggleMode }) => (
-  <HeaderLayout>
-    <Link to="/contact">let's connect</Link>
-    <ButtonGhost onClick={toggleMode}>
-      {mode === 'light' ? <RiEyeFill /> : <RiEyeCloseFill />}
-    </ButtonGhost>
-  </HeaderLayout>
+const Header = () => (
+  <Layout img={bannerImg} imgSm={bannerSm}>
+      <SectionWrapper height="70vh">
+         <HeadlineWrapper>
+         <Headings data={data.hero.text}/>
+        </HeadlineWrapper>
+        <Wrapper>
+        <Logo/>
+        </Wrapper> 
+        </SectionWrapper>  
+  
+  </Layout>
 )
+
+const HeadlineWrapper = styled.div`
+margin-right:auto;
+`
+const Wrapper = styled.div`
+margin-left:auto;
+`
 
 export default Header

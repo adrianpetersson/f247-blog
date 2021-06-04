@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby starter Styled Components`,
-    siteUrl: 'https://gatsby-styled.netlify.app/',
-    description: 'Gatsby starter with modular file structure and support for Styled Components',
-    author: `Jovanovska Jovana`,
+    title: `F24 blog Concept`,
+    siteUrl: 'https://f247blog.netlify.app/',
+    description: 'A fitness 24/7 blog',
+    author: `Adrian Petersson`,
   },
   plugins: [
     'gatsby-plugin-styled-components',
@@ -17,4 +17,5 @@ module.exports = {
       },
     },
   ],
+    pathPrefix: "/f247-blog"
 }

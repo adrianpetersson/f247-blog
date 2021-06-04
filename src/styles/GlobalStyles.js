@@ -16,13 +16,10 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.5;
     font-style: normal;
     font-stretch: normal;
-    font-family: 'Ubuntu', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Rational', sans-serif;
     letter-spacing: normal;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: none;
   }
