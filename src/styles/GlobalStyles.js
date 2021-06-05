@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-stretch: normal;
     font-family: 'Rational', sans-serif;
+    color:#002a4e;
     letter-spacing: normal;
     margin: 0;
     padding: 0;
@@ -68,6 +69,6 @@ const GlobalStyles = createGlobalStyle`
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
   }
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;

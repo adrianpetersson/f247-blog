@@ -1,27 +1,42 @@
-import React, {useState} from 'react'
-import styled from "styled-components"
-import data from "../data/content"
-
+import React, { useState } from "react";
+import styled from "styled-components";
+import data from "../data/content";
 
 const LanguagePicker = () => {
+  const [menu, setMenu] = useState(false);
+  const [lang, setLang] = useState("Sweden");
 
-    const [menu,setMenu] = useState(false)
-    const [lang,setLang] = useState("Sweden")
+  // get current flag icon
+  let filterdIcon = data.global.countries.filter((current) =>
+    current.lang.includes(lang)
+  );
 
-    return (
-        <MenuContainer>
-    {menu ? <LangMenu>{data.global.countries.map(lang => (
-        <LanguageDiv onClick={()=>setLang(lang.lang)}> <Flag src={lang.icon} alt={lang.lang} /> <span>{lang.lang}</span>  </LanguageDiv>
-    ))}</LangMenu>
-    : null}
-    <LangPicker onClick={()=>setMenu(!menu)}><img src={data.global.lang.icon} alt={data.global.lang.alt} /><span>{lang}</span></LangPicker>
+ 
+  return (
+    <MenuContainer>
+      {menu ? (
+        <LangMenu>
+          {data.global.countries.map((lang) => (
+            <LanguageDiv key={lang.lang} onClick={() => {setLang(lang.lang); setMenu(false)}}>
+              {" "}
+              <Flag src={lang.icon} alt={lang.lang} /> <span>{lang.lang}</span>{" "}
+            </LanguageDiv>
+          ))}
+        </LangMenu>
+      ) : null}
+      <LangPicker onClick={() => setMenu(!menu)}>
+        <Flag src={filterdIcon[0].icon} alt={data.global.lang.alt} />
+        <span>{lang}</span>
+      </LangPicker>
     </MenuContainer>
-    )
-}
+  );
+};
 
-const Flag =styled.img`
-margin-left:0 auto;
-width:40px;`
+const Flag = styled.img`
+  margin-left: 0 auto;
+  width: 40px;
+  height:40px;
+`;
 
 const LanguageDiv = styled.div`
 display:flex;
@@ -33,19 +48,19 @@ text-align:center;
     background-color:blue;
     color:white;
     cursor:pointer;
-`
+`;
 const MenuContainer = styled.div`
-position:relative;
-z-index:99;
-`
+  position: relative;
+  z-index: 99;
+`;
 const LangMenu = styled.div`
-margin-bottom:4rem;
-z-index:0;
-position:absolute;
-width:100%;
-bottom:0;
-background-color:white;
-`
+  margin-bottom: 4rem;
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: white;
+`;
 const LangPicker = styled.button`
 width:200px;
 position:relative;
@@ -55,6 +70,6 @@ justify-content:space-between;
 padding: 1rem 2rem;
 &:focus {
     outline: blue;
-`
+`;
 
-export default LanguagePicker
+export default LanguagePicker;
