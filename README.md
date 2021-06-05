@@ -21,4 +21,3 @@ The footer should contain the following.
 - Logotype
 - Footer links linking to the main website www.fitness24seven.com
 - Switch language link
-Here is a ready-to-use Gatsby starter with Styled Components, ESLint, SEO optimization and more.
